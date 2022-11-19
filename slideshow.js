@@ -9,7 +9,7 @@ const images = [
     { 'id': '6', 'url': './img/yuyuhakusho.jpg' },
 ]
 
-const container = document.querySelector('#container-items');
+const containerItems = document.querySelector('#container-items');
 
 const loadImages = (images, container) => {
     images.forEach(image => {
@@ -21,4 +21,22 @@ const loadImages = (images, container) => {
     });
 }
 
-loadImages(images, container);
+
+
+loadImages(images, containerItems);
+
+let items = document.querySelectorAll('.item');
+
+const previous = () => {
+    containerItems.appendChild(items[0]);
+    items = document.querySelectorAll('.item');
+}
+
+const next = () => {
+    const lastItem = items[items.length - 1];
+    containerItems.insertBefore(lastItem, item[0]);
+    items = document.querySelectorAll('.item');
+}
+
+document.querySelector('#previous').addEventListener('click', previous);
+document.querySelector('#next').addEventListener('click', next);
