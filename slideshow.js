@@ -14,14 +14,12 @@ const containerItems = document.querySelector('#container-items');
 const loadImages = (images, container) => {
     images.forEach(image => {
         container.innerHTML += `
-        <div class='item'>
-            <img src='${image.url}'
-        </div>
+            <div class='item'>
+                <img src='${image.url}'
+            </div>
         `
     });
 }
-
-
 
 loadImages(images, containerItems);
 
@@ -34,7 +32,7 @@ const previous = () => {
 
 const next = () => {
     const lastItem = items[items.length - 1];
-    containerItems.insertBefore(lastItem, item[0]);
+    containerItems.insertBefore(lastItem, items[0]);
     items = document.querySelectorAll('.item');
 }
 
